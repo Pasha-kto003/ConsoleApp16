@@ -6,43 +6,18 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp16
 {
-
-    public class Cat
+    class program
     {
-        public Cat(string name, DateTime birthday)
-        {
-            Name = name;
-            BirthDay = birthday;
-        }
-        public string Name
-        {
-            get;
-            set;
-        }
-        public void MakeNoise()
-        {
-            Console.WriteLine($"{Name} мяукает");
-        }
-
-        public DateTime BirthDay
-        {
-            get; set;
-        }
-        public int GetAge()
-        {
-            return (DateTime.Today - BirthDay).Days / 365;
-        }
-    }
-    class Program
-    {
-
-
         static void Main(string[] args)
         {
-            Cat c = new Cat("Vladik", new DateTime(2020, 05, 25));
+            Cat c = new Cat("Vladik", new DateTime(2010, 05, 25));
             c.MakeNoise();
-            Console.WriteLine($"Кошка по имени {c.Name} уже {c.GetAge()} лет");
+            Console.WriteLine($"Кошке по имени {c.Name} уже {c.GetAge()} лет");
+            c.HungryStatus = 150;
+            Console.ReadLine();
         }
     }
+ 
+    
     
 }
